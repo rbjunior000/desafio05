@@ -21,11 +21,7 @@ export default class Repository extends Component {
         repository: {},
         issues: [],
         loading: true,
-        filters: [
-            { state: 'all', label: 'Todas', active: true },
-            { state: 'open', label: 'Abertas', active: false },
-            { state: 'closed', label: 'Fechadas', active: false },
-        ],
+        filters: [{ state: 'all' }, { state: 'open' }, { state: 'closed' }],
         filterIndex: 0,
         page: 1,
     };
@@ -53,7 +49,7 @@ export default class Repository extends Component {
     }
 
     handleSelect = async e => {
-        await this.setState({ filterIndex: e.target.value });
+        await this.setState({ filterIndex: e.target.value, page: 1 });
         this.loadIssues();
     };
 

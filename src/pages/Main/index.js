@@ -60,6 +60,7 @@ export default class Main extends Component {
                 });
             }
         } catch (err) {
+            console.log('Repositorio ja existe');
             this.setState({
                 loading: false,
                 submitApi: true,
